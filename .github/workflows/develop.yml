@@ -10,7 +10,5 @@ jobs:
               run: echo "My first github actions job"
             - name: List files
               run: ls
-            - name: Readfile
-              run: cat .README.md
             - name: script
-              run: ./hello.sh
+              run: ../../hello.sh
