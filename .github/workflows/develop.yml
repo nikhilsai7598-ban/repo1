@@ -11,4 +11,6 @@ jobs:
             - name: List files
               run: ls
             - name: Readfile
-              run: cat README.md
+              run: cat .README.md
+            - name: script
+              run: ./hello.sh
