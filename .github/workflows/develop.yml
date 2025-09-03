@@ -4,11 +4,14 @@ on: push
 
 jobs:
     first_job:
-        runs-on: ubuntu-latest
+        runs-on: labvm2g8
         steps:
+            - uses: actions/checkout@v4
             - name: Welcome
               run: echo "My first github actions job"
             - name: List files
               run: ls
+            - name: script executable perm
+              run: chmod +x hello.sh
             - name: script
-              run: ../../hello.sh
+              run: ./hello.sh
