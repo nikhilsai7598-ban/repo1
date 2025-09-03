@@ -15,3 +15,11 @@ jobs:
               run: chmod +x hello.sh
             - name: script
               run: ./hello.sh
+
+    second_job:
+        runs-on: labvm2g8
+        needs:  first_job
+        steps:
+            - name: Welcome
+              run: echo "My Second github actions job"
+            
