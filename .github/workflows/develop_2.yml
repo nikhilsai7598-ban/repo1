@@ -1,6 +1,12 @@
 
 name: Workflow for develop2
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 
 jobs:
     first_job:

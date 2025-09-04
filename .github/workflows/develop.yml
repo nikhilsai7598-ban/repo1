@@ -1,6 +1,12 @@
 
 name: My first Workflow
-on: push
+on: 
+  workflow_dispatch:
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 
 env:
     CONTAINER_REGISTRY: docker.io
