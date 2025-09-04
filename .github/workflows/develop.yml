@@ -20,7 +20,7 @@ jobs:
                 ./hello.sh
                 ./ascii-script.sh
             - name: Upload dragon file to artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4.6.2
               with:
                   name: dragon-text-file
                   path: dragon.txt
@@ -36,7 +36,7 @@ jobs:
             - name: Pause for 10 seconds
               run: sleep 10
             - name: Download dragon file to artifact
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v5.0.0
               with:
                   name: dragon-text-file
             - name: Verify dragon.txt
