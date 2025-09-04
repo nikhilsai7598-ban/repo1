@@ -19,6 +19,8 @@ jobs:
               run: |
                 ./hello.sh
                 ./ascii-script.sh
+            - name: Pause for 30 seconds
+              run: sleep 30
 
     second_job:
         runs-on: labvm2g8
@@ -26,4 +28,9 @@ jobs:
         steps:
             - name: Welcome
               run: echo "My Second github actions job"
+            - name: Pause for 10 seconds
+              run: sleep 10
+            - name: Verify dragon.txt
+              run: grep -i "dragon" dragon.txt
+            
             
