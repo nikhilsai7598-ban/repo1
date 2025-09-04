@@ -19,6 +19,11 @@ jobs:
               run: |
                 ./hello.sh
                 ./ascii-script.sh
+            - name: Upload dragon file to artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: dragon-text-file
+                  path: dragon.txt
             - name: Pause for 30 seconds
               run: sleep 30
 
@@ -30,6 +35,10 @@ jobs:
               run: echo "My Second github actions job"
             - name: Pause for 10 seconds
               run: sleep 10
+            - name: Download dragon file to artifact
+              uses: actions/download-artifact@v3
+              with:
+                  name: dragon-text-file
             - name: Verify dragon.txt
               run: grep -i "dragon" dragon.txt
             
