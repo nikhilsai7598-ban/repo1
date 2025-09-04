@@ -1,0 +1,16 @@
+
+name: Workflow for develop2
+on: push
+
+jobs:
+    first_job:
+        runs-on: labvm2g8
+        steps:
+            - uses: actions/checkout@v4
+            - name: Welcome
+              run: echo "My first github actions job"
+            - name: List files
+              run: |
+                ls -ltra
+                echo "Test"
+          
