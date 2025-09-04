@@ -1,6 +1,12 @@
 
 name: Workflow for develop2
-on: push
+on: 
+ workflow_dispatch:
+    inputs:
+      loglevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 
 jobs:
     first_job:
@@ -16,7 +22,7 @@ jobs:
     second_job:
         runs-on: labvm2g8
         needs:  first_job
-        timeout-minutes: 1
+        timeout-minutes: 5
         concurrency:
             group: production-deployment
             cancel-in-progress: true
