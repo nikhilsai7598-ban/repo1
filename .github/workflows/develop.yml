@@ -12,9 +12,13 @@ jobs:
             - name: List files
               run: ls
             - name: script executable perm
-              run: chmod +x hello.sh
+              run: |
+                chmod +x hello.sh
+                chmod +x ascii-script.sh
             - name: script
-              run: ./hello.sh
+              run: |
+                ./hello.sh
+                ./ascii-script.sh
 
     second_job:
         runs-on: labvm2g8
