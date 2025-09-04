@@ -2,7 +2,13 @@
 name: My first Workflow
 on: push
 
+env:
+    CONTAINER_REGISTRY: docker.io
+    DOCKER_USERNAME: ikc3kor
+    IMAGE_NAME: github-actions-ngnix
+
 jobs:
+    
     first_job:
         runs-on: labvm2g8
         steps:
@@ -11,6 +17,9 @@ jobs:
               run: echo "My first github actions job"
             - name: List files
               run: ls
+            - name: Test the env variables
+              run: |
+                  echo ${DOCKER_USERNAME}
             - name: script executable perm
               run: |
                 chmod +x hello.sh
@@ -25,7 +34,7 @@ jobs:
                   name: dragon-text-file
                   path: dragon.txt
             - name: Pause for 30 seconds
-              run: sleep 30
+              run: sleep 15
 
     second_job:
         runs-on: labvm2g8
