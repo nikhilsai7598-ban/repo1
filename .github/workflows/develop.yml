@@ -20,6 +20,9 @@ jobs:
             - name: Test the env variables
               run: |
                   echo ${DOCKER_USERNAME}
+                  echo ${{secrets.REPOSECRET}}
+                  echo ${{vars.REPOVAR1}}
+
             - name: script executable perm
               run: |
                 chmod +x hello.sh
