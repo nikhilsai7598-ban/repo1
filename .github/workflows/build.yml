@@ -7,5 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Build completed successfully"
-	  
+      - name: Use my composite action
+        uses: ./.github/actions/my-actions
+        with:
+          node-version: '18'
