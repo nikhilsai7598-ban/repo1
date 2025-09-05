@@ -4,6 +4,7 @@ on:
 
 jobs:
   deploy:
+    if: github.run_attempt == 1
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
@@ -12,7 +13,5 @@ jobs:
     steps:
       - name: Echo Docker Details
         run: docker info
-
-
       - name: Run ${{ matrix.image }} on ${{ matrix.os }}
         run: docker run ${{ matrix.image }}
